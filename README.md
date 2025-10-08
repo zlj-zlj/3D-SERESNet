@@ -25,6 +25,6 @@ CHB-MIT Dataset: Official download link: https://physionet.org/content/chbmit/1.
 
 ``` shell
 
-python predict.py --model model.pt --i inputdir --0 outputdir 
+python predict.py --model model/weights/best.pt --i inputdir --0 outputdir 
 
 ```
