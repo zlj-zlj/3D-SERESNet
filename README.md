@@ -20,8 +20,14 @@ torch
 ## datas
 CHB-MIT Dataset: Official download link: https://physionet.org/content/chbmit/1.0.0/  
 
+## Train
 
-## run
+``` shell
+
+python train.py --i input_Data_dir --0 outputdir 
+
+```
+## Test
 
 ``` shell
 
