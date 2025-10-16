@@ -81,23 +81,14 @@ def predict(args):
     raw_predictions = test_model(model, test_loader, device)
 
 
-    processed_predictions, alarm_indices = k_of_n_postprocessing(
+    _, alarm_indices = k_of_n_postprocessing(
         raw_predictions, window_size=10, threshold=8
     )
-
-
-
-    end_time = time.time()
-    total_params = sum(p.numel() for p in model.parameters())
-
-    print(f"Total number of parameters: {total_params}")
-    print(f"Total segments: {len(raw_predictions)}")
-    print(f"Raw preictal predictions: {np.sum(raw_predictions)}")
     print(f"Alarms triggered: {len(alarm_indices)}")
-    print(f"Alarm positions (segment indices): {alarm_indices}")
-    print(f"Alarm times (seconds): {[idx * 10 for idx in alarm_indices]}")
-    print(f'The result is saved in: {results}')
-    print(f'Running time: {end_time - start_time:.2f} s')
+
+
+
+  
 
 
 if __name__ == "__main__":
@@ -110,6 +101,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     predict(args)
+
 
 
 
