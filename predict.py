@@ -88,7 +88,7 @@ def predict(args):
 
 
 
-  
+
 
 
 if __name__ == "__main__":
@@ -101,7 +101,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     predict(args)
-
 
 
 
